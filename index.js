@@ -19,8 +19,8 @@ var enabled = true;
 // Our greeting to the user.
 var HELLO_WORLD_ANNOUNCEMENT = {
   "contents": [
-    { "type": "heading",      "text": "Diskspace driver Loaded" },
-    { "type": "paragraph",    "text": "The Ninjablock diskspace driver has been loaded. You should not see this message again." }
+    { "type": "heading",      "text": "Ninja Diskspace Driver Loaded" },
+    { "type": "paragraph",    "text": "The Ninja Diskspace driver has been loaded. You should not see this message again." }
   ]
 };
 

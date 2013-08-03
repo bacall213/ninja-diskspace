@@ -1,7 +1,8 @@
 Ninja Diskspace Module
 ======================
-Author: Paul Cullender
-Version: 1.0
+Author: Brian Call
+Based on ninja-diskspace by Paul Cull
+Version: 0.0.1
 Status: Stable
 License: BSD
 
@@ -10,7 +11,7 @@ License: BSD
 ### Step 1 - fetch driver
 ```
 cd PATH_TO_NINJA_CLIENT/drivers
-git clone https://github.com/paulcull/ninja-diskspace.git
+git clone https://github.com/bacall213/ninja-diskspace.git
 cd ninja-diskspace
 npm install
 ```
@@ -35,3 +36,4 @@ configuration to change the string to search for in the
 output from df -k
 
 ### Step 2 - restart process
+sudo service ninjablock restart

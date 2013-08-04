@@ -13,7 +13,7 @@ util.inherits(dsDriver,stream);
 // in theory you could mount other network drives and monitor those too
 // e.g. my macbook is 0s2
 // e.g. my NB is 0p2
-var disk_to_watch = '0p2';  
+var default_disk = '0p2';  
 var default_poll_interval = 300;
 
 // Enable/disable driver
@@ -57,11 +57,11 @@ function dsDriver(opts,app) {
           self.emit('announcement',HELLO_WORLD_ANNOUNCEMENT);
           opts.hasSentAnnouncement = true;
           opts.poll_interval = default_poll_interval;
-          opts.disk_string = disk_to_watch;
+          opts.disk_string = default_disk;
           self.save();
         }
 
-        if (!opts.disk_string) {
+        /*if (!opts.disk_string) {
           opts.platform = process.platform
 
           if (process.platform == 'darwin') 
@@ -72,6 +72,7 @@ function dsDriver(opts,app) {
             {opts.disk_string = '0p2'}
           self.save();
         }
+        */
         // Register a device
         self.emit('register', new Device(app, opts));
     }
@@ -91,11 +92,12 @@ function dsDriver(opts,app) {
 dsDriver.prototype.config = function(rpc,cb) {
 
   var self = this;
+
   // If rpc is null, we should send the user a menu of what he/she
   // can do.
   // Otherwise, we will try action the rpc method
   if (!rpc) {
-    return configHandlers.menu.call(this,this.opts.disk_string,opts.poll_interval,cb);
+    return configHandlers.menu.call(this,this.opts.disk_string,this.opts.poll_interval,cb);
   }
   else if (typeof configHandlers[rpc.method] === "function") {
     return configHandlers[rpc.method].call(this,this.opts,rpc.params,cb);

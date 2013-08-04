@@ -2,7 +2,7 @@ Ninja Diskspace Module
 ======================
 Author: Brian Call
 Based on ninja-diskspace by Paul Cull
-Version: 0.0.1
+Version: 0.0.2
 Status: Stable
 License: BSD
 
@@ -19,7 +19,7 @@ npm install
 check the device that you want monitor
 df -k
 
-results should look like
+Results should look like
 ```
 ubuntu@ninjablock:~$ df -k
 Filesystem     1K-blocks    Used Available Use% Mounted on
@@ -31,9 +31,14 @@ none              125780       0    125780   0% /run/shm
 tmpfs              51200    6128     45072  12% /var/log
 /dev/mmcblk0p1     65390   11152     54238  18% /boot/uboot
 ```
-defaults to 0p2 for the ninjablock, but you can use the driver
-configuration to change the string to search for in the
-output from df -k
+This driver defaults to 0p2 for the Ninja Block. Use the driver 
+config dialog to change the disk you want to monitor.
 
 ### Step 2 - restart process
 sudo service ninjablock restart
+
+
+## Notes
+- Install instructions not proofed
+- This is NOT on NPM yet, so `npm install` is expected to fail
+- This driver based on the ninja-diskspace driver by Paul Cull

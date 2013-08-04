@@ -14,13 +14,16 @@ util.inherits(dsDriver,stream);
 // e.g. my macbook is 0s2
 // e.g. my NB is 0p2
 var disk_to_watch = '0p2';  
+var default_poll_interval = 300;
+
+// Enable/disable driver
 var enabled = true;
 
 // Our greeting to the user.
 var HELLO_WORLD_ANNOUNCEMENT = {
   "contents": [
-    { "type": "heading",      "text": "Ninja Diskspace Driver Loaded" },
-    { "type": "paragraph",    "text": "The Ninja Diskspace driver has been loaded. You should not see this message again." }
+    { "type": "heading",      "text": "Ninja Diskspace Monitor Loaded" },
+    { "type": "paragraph",    "text": "The Ninja Diskspace Monitor has been loaded. You should not see this message again." }
   ]
 };
 
@@ -53,11 +56,14 @@ function dsDriver(opts,app) {
         if (!opts.hasSentAnnouncement) {
           self.emit('announcement',HELLO_WORLD_ANNOUNCEMENT);
           opts.hasSentAnnouncement = true;
+          opts.poll_interval = default_poll_interval;
+          opts.disk_string = disk_to_watch;
           self.save();
         }
 
         if (!opts.disk_string) {
           opts.platform = process.platform
+
           if (process.platform == 'darwin') 
            {opts.disk_string = '0s2'} 
           else if (process.platform =='win32')
@@ -89,7 +95,7 @@ dsDriver.prototype.config = function(rpc,cb) {
   // can do.
   // Otherwise, we will try action the rpc method
   if (!rpc) {
-    return configHandlers.menu.call(this,this.opts.disk_string,cb);
+    return configHandlers.menu.call(this,this.opts.disk_string,opts.poll_interval,cb);
   }
   else if (typeof configHandlers[rpc.method] === "function") {
     return configHandlers[rpc.method].call(this,this.opts,rpc.params,cb);

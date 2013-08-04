@@ -1,5 +1,5 @@
-Ninja Diskspace Module
-======================
+Ninja Diskspace Monitor
+=======================
 Author: Brian Call
 Based on ninja-diskspace by Paul Cull
 Version: 0.0.2

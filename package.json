@@ -1,6 +1,6 @@
 {
   "name": "ninja-diskspace",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Ninja Diskspace Monitor",
   "main": "index.js",
   "scripts": {
@@ -8,5 +8,5 @@
   },
   "repository": "https://github.com/bacall213/ninja-diskspace",
   "author": "bacall213",
-  "license": "BSD"
+  "license": "MIT"
 }

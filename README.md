@@ -2,9 +2,9 @@ Ninja Diskspace Monitor
 =======================
 Author: Brian Call
 Based on ninja-diskspace by Paul Cull
-Version: 0.0.2
+Version: 0.0.3
 Status: Stable
-License: BSD
+License: MIT
 
 
 ## Installation
@@ -39,6 +39,27 @@ sudo service ninjablock restart
 
 
 ## Notes
-- Install instructions not proofed
-- This is NOT on NPM yet, so `npm install` is expected to fail
+- Install instructions have not been tested
 - This driver based on the ninja-diskspace driver by Paul Cull
+
+
+## License
+Copyright (c) 2013 Brian Call
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.

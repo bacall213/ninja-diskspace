@@ -14,7 +14,7 @@ util.inherits(dsDriver,stream);
 // e.g. my macbook is 0s2
 // e.g. my NB is 0p2
 var default_disk = '0p2';  
-var default_poll_interval = 300;
+var default_poll_interval = 60;
 
 // Enable/disable driver
 var enabled = true;

@@ -2,13 +2,13 @@ Ninja Diskspace Monitor
 =======================
 Author: Brian Call
 Based on ninja-diskspace by Paul Cull
-Version: 0.0.3
+Version: 0.0.4
 Status: Stable
 License: MIT
 
 
-## Installation
-### Step 1 - fetch driver
+### Installation
+#### Step 1 - fetch driver
 ```
 cd PATH_TO_NINJA_CLIENT/drivers
 git clone https://github.com/bacall213/ninja-diskspace.git
@@ -34,16 +34,25 @@ tmpfs              51200    6128     45072  12% /var/log
 This driver defaults to 0p2 for the Ninja Block. Use the driver 
 config dialog to change the disk you want to monitor.
 
-### Step 2 - restart process
+#### Step 2 - restart process
 sudo service ninjablock restart
 
 
-## Notes
-- Install instructions have not been tested
+### Notes
 - This driver based on the ninja-diskspace driver by Paul Cull
 
 
-## License
+
+### Change History
+#### 0.0.4
+- Added change history to readme
+- Change default refresh timer to 60 seconds
+- Cleaned up settings dialog messages
+- Added require('os') to device.js
+- Now using os.hostname() to build a more dynamic title for the widget
+
+
+### License
 Copyright (c) 2013 Brian Call
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
